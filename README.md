@@ -1,10 +1,10 @@
 # align
 
 ## versions
-Ruby >= 2.4
-Rails = 4.2.11.1
-PostgreSQL = 12.4 with postgis
-Git = 2.20.1
+- Ruby >= 2.4
+- Rails = 4.2.11.1
+- PostgreSQL = 12.4 with postgis
+- Git = 2.20.1
 
 ##### start it
 cd projects
