@@ -1,8 +1,8 @@
 # align
 
 ## Bare metal installation
-- [ruby](https://ruby-china.org/wiki/rvm-guide)
-- [rails]('https://ruby-china.org/wiki/mac-nginx-passenger-rails')
+- [ruby install guide](https://ruby-china.org/wiki/rvm-guide)
+- [rails install guide](https://ruby-china.org/wiki/mac-nginx-passenger-rails)
 
 ## required
 - Ruby >= 2.4
