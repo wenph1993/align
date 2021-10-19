@@ -1,7 +1,6 @@
 class User < ActiveRecord::Base
   include ActiveModel::SecurePassword
   has_secure_password
-  validates_confirmation_of :password
   validates :name, uniqueness: true, length: { in: 4..16 }
   validates :password, confirmation: true, length: { in: 8..16 }
   validate :complex_check
