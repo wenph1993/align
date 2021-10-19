@@ -1,8 +1,14 @@
-# align_blog
+# align
+
+## versions
+Ruby >= 2.4
+Rails = 4.2.11.1
+PostgreSQL = 12.4 with postgis
+Git = 2.20.1
+
 ##### start it
 cd projects
-git clone git@github.com:wenph1993/align_blog.git
-
+git@github.com:wenph1993/align.git
 cd align_blog
 
 ## Install Notes
