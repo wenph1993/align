@@ -1,0 +1,42 @@
+<%= form_for(@task, url: tasks_path, method: :post, remote: true, html: {class: "form-horizontal"}) do |f| %>
+  <% if @errors.try(:any?) %>
+    <div id="error_explanation">
+      <b>出现<%= @errors.count %>错误:</b>
+      <ul>
+      <% @errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= f.hidden_field :user_id %>
+  <div class="form-group row">
+    <label for="description" class="col-md-4 col-form-label text-md-right">enter your code</label>
+    <div class="col-md-6">
+      <%= f.text_field :description, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="import" class="col-md-4 col-form-label text-md-right">import</label>
+    <div class="col-md-6">
+      <%= f.label :import, "not import", value: "false"  %>
+      <%= f.radio_button :import, false, checked: true  %>
+      <%= f.label :import, "import" %>
+      <%= f.radio_button :import, true %>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="urgent" class="col-md-4 col-form-label text-md-right">urgent</label>
+    <div class="col-md-6">
+      <%= f.label :urgent, "not urgent", value: "false"  %>
+      <%= f.radio_button :urgent, false, checked: true  %>
+      <%= f.label :urgent, "urgent" %>
+      <%= f.radio_button :urgent, true %>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-md-6 offset-md-4">
+      <%= f.submit 'Add', class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

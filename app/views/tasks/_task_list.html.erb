@@ -1,0 +1,93 @@
+<style type="text/css">
+.lbl {
+    padding: .5rem 1rem;
+    border-radius: .2rem;
+    cursor: pointer;
+    transition: all .3s;
+    transition-timing-function: ease-in-out;
+}
+
+.lbl-default {
+    background-color: rgb(116,120,141, 0.1);
+    color: #74788d;
+}
+
+.lbl-default:hover {
+    background-color: #74788d;
+    color: #fff;
+}
+
+.lbl-success {
+    background-color: rgba(10, 187, 135, 0.1);
+    color: #0abb87;
+}
+
+.lbl-success:hover {
+    background-color: #0abb87;
+    color: #fff;
+}
+
+.lbl-danger {
+    background-color: rgba(253,57,122,.1);
+    color: #fd397a;
+}
+
+.lbl-danger:hover {
+    background-color: #fd397a;
+    color: #fff;
+}
+
+.lbl-primary {
+    background-color: rgba(93,120,255,.1);
+    color: #5d78ff;
+}
+
+.lbl-primary:hover {
+    background-color: #5d78ff;
+    color: #fff;
+}
+
+.lbl-warning {
+    background-color: rgba(255,184,34,.1);
+    color: #ffb822;
+}
+
+.lbl-warning:hover {
+    background-color: #ffb822;
+    color: #fff;
+}
+
+.lbl-block {
+    display: block;
+}
+</style>
+<div class="table-responsive" id="sailorTableArea">
+  <table id="sailorTable" class="table table-striped table-bordered" width="100%">
+    <thead></thead>
+    <tbody>
+      <% @tasks.each do |task| %>
+        <% text, label = task_des_text_and_label(task) %>
+        <tr>
+          <td width="50%">
+            <%= task.description %>
+            <label class="lbl <%= label %>">
+              <span><%= text %></span>
+            </label>
+          </td>
+          <td width="15%">
+            <label class="lbl <%= task.urgent ? 'lbl-danger' : 'lbl-default' %>"><span><%= task.urgent ? 'import' : 'not import' %></span></label>
+          </td>
+          <td width="15%">
+            <label class="lbl <%= task.urgent ? 'lbl-warning' : 'lbl-default' %>"><span><%= task.urgent ? 'urgent' : 'not urgent' %></span></label>
+          </td>
+          <td>
+            <% unless task.done? %>
+              <%= link_to "#{task.start? ? 'start' : 'done'}", change_status_task_path(task.id), method: :post, class: 'btn btn-primary' %>
+            <% end %>
+            <%= link_to "delete", task_path(task.id), method: :delete, class: 'btn btn-danger' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

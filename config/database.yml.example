@@ -1,0 +1,18 @@
+# 当需要通过pgpool或pgbouncer连接数据库时，prepared_statements设置为false
+development: &pgsql
+  adapter: postgis
+  encoding: unicode
+  pool: 2
+  host: localhost
+  port: 5432
+  username: align
+  password: '123456'
+  database: align_blog
+  # prepared_statements: false
+
+test:
+  <<: *pgsql
+staging:
+  <<: *pgsql
+production:
+  <<: *pgsql

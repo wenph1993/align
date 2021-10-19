@@ -1,5 +1,37 @@
-# Object file
-*.o
 
-# Ada Library Information
-*.ali
+/.bundle
+
+/.idea
+
+# Ignore the default SQLite database.
+/db/*.sqlite3
+/db/*.sqlite3-journal
+
+# Ignore all logfiles and tempfiles.
+/log/*
+/tmp
+database.yml
+isolation.yml
+.DS_Store
+.ruby-version
+.project
+/public/uploads
+/public/assets
+/files
+/nbproject
+.tags*
+.tags
+.tags1
+dump.rdb
+/public/cache
+.byebug_history
+.vscode
+/config/puma.rb
+/node_modules
+package-lock.json
+package.json
+lib/excel/*
+config/schedule.cron
+
+# ignore db schema dump
+db/schema.rb
